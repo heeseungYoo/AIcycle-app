@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hellpwprld"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="259dp"
+            android:src="@drawable/paperpack" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:columnCount="2"
+            android:rowCount="3">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/paperpack" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:src="@drawable/paper" />
+
+            <ImageView
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:src="@drawable/glass" />
+
+            <ImageView
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:src="@drawable/can" />
+            <ImageView
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:src="@drawable/vinyl"/>
+            <ImageView
+                android:layout_height="140dp"
+                android:layout_width="210dp"
+                android:src="@drawable/plastic"/>
+        </GridLayout>
+    </LinearLayout>
+
+</FrameLayout>
