@@ -1,5 +1,7 @@
 package com.example.project3_test1;
 
+import android.util.Log;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -17,6 +19,7 @@ public class LoginRequest extends StringRequest {
 
     public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
         super(Method.GET, URL, listener, null);
+        Log.d("why", "asdfasdf");
         parameters = new HashMap<>();
         parameters.put("userID", userID);
         parameters.put("userPassword", userPassword);
