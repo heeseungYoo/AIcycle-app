@@ -43,6 +43,7 @@ public class HomeFragment extends Fragment {
     private static final int REQUEST_IMAGE_CAPTURE = 672;
     private String imageFilePath;
     private Uri photoUri;
+    private File photoFile;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_home, container, false);
@@ -148,6 +149,19 @@ public class HomeFragment extends Fragment {
 
             //((ImageView) v.findViewById(R.id.photo)).setImageBitmap(rotate(bitmap, exifDegree));
         }
+        if (resultCode != RESULT_OK) {
+            Toast.makeText(getView().getContext(), "취소 되었습니다.", Toast.LENGTH_SHORT).show();
+
+            if(photoFile != null) {
+                if (photoFile.exists()) {
+                    if (photoFile.delete()) {
+                        photoFile = null;
+                    }
+                }
+            }
+
+            return;
+        }
     }
 
     private int exifOrientationToDegrees(int exifOrientation) {
@@ -170,7 +184,7 @@ public class HomeFragment extends Fragment {
     public void takePicture() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if(intent.resolveActivity(v.getContext().getPackageManager()) != null) {
-            File photoFile = null;
+//            File photoFile = null;
             try {
                 photoFile = createImageFile();
             } catch (IOException e) {

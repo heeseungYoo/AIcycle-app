@@ -32,7 +32,7 @@ public class ScreenService extends Service {
             if(intent.getAction() == null) {
                 if(mReceiver == null) {
                     mReceiver = new ScreenReceiver();
-                    IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
+                    IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
                     registerReceiver(mReceiver, filter);
                 }
             }

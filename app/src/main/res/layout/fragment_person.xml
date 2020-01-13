@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
+        android:layout_margin="20dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -79,7 +79,7 @@
                     android:id="@+id/userEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="yuncw99@naver.com"/>
+                    android:text=""/>
 
             </LinearLayout>
 

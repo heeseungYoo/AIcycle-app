@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="recycle">
+        <item>@drawable/recycle01</item>
+        <item>@drawable/recycle02</item>
+        <item>@drawable/recycle03</item>
+        <item>@drawable/recycle04</item>
+        <item>@drawable/recycle05</item>
+        <item>@drawable/recycle06</item>
+        <item>@drawable/recycle07</item>
+        <item>@drawable/recycle08</item>
+        <item>@drawable/recycle09</item>
+    </array>
+</resources>

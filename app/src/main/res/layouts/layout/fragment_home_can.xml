@@ -10,7 +10,7 @@
         android:text="can" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/okBtn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="확인" />

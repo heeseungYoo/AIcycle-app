@@ -12,9 +12,10 @@ public class RegisterRequest extends StringRequest {
     final static private String URL = "http://192.249.19.252:2080/logins";
     private Map<String, String> parameters;
 
-    public RegisterRequest(String userID, String userPassword, String name, String userEmail, Response.Listener<String> listener) {
+    public RegisterRequest(String userImg, String userID, String userPassword, String name, String userEmail, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
         parameters = new HashMap<>();
+        parameters.put("userImg", userImg);
         parameters.put("userID", userID);
         parameters.put("userPassword", userPassword);
         parameters.put("name", name);

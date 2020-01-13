@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");
+        String name = intent.getStringExtra("name");
+        String userImg = intent.getStringExtra("userImg");
         Toast.makeText(this, userID + " 로그인 하셨습니다.", Toast.LENGTH_SHORT).show();
         PersonFragment fragment = new PersonFragment();
         Bundle bundle = new Bundle(1);
@@ -85,4 +87,5 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
+
 }
