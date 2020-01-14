@@ -16,14 +16,40 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:gravity="center_horizontal"
-            android:text="분리수거 하는 법을 모르겠다면 AI에게 물어봐~" />
+            android:textSize="15sp"
+            android:text="분리수거 하는 법" />
 
-        <ImageButton
-            android:id="@+id/cameraBtn"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="30dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ai_cpu"
+                android:layout_gravity="center_horizontal"
+                android:alpha="0.8"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="15sp"
+                android:text="에게 물어보기" />
+
+
+        </LinearLayout>
+
+
+
+        <ImageButton
+            android:id="@+id/cameraBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_add_a_photo_black_24dp" />
 

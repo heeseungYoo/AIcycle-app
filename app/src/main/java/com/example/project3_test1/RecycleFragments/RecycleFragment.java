@@ -70,9 +70,9 @@ public class RecycleFragment extends Fragment {
         mAdapter = new RecycleAdapter(v.getContext(), mArrayList);
         mRecyclerView.setAdapter(mAdapter);
 
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(),
-                mLinearLayoutManager.getOrientation());
-        mRecyclerView.addItemDecoration(dividerItemDecoration);
+        //DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(),
+         //       mLinearLayoutManager.getOrientation());
+        //mRecyclerView.addItemDecoration(dividerItemDecoration);
 
         getRecyclePoint();
         mAdapter.notifyDataSetChanged();
