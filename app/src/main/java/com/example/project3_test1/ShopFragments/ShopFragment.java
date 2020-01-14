@@ -140,12 +140,16 @@ public class ShopFragment extends Fragment implements ShopAdapter.OnListItemLong
 
     private ArrayList<ShoppingItem> getShopList() {
         ShoppingItem shoppingItem = new ShoppingItem(R.drawable.crape, "스페로스페라 크레이프 케이크", "22000");
-        ShoppingItem shoppingItem1 = new ShoppingItem(R.drawable.nintendo, "닌텐도 스위치", "150000");
-        ShoppingItem shoppingItem2 = new ShoppingItem(R.drawable.ic_mail_outline_black_24dp, "기부하기", "10");
-        ShoppingItem shoppingItem3 = new ShoppingItem(R.drawable.lion, "썸머 라이언", "30,000");
+        ShoppingItem shoppingItem1 = new ShoppingItem(R.drawable.twosome, "투썸플레이스 스트로베리 초콜릿 생크림 케이크", "22000");
+        ShoppingItem shoppingItem2 = new ShoppingItem(R.drawable.nintendo, "닌텐도 스위치", "150000");
+        ShoppingItem shoppingItem3 = new ShoppingItem(R.drawable.lion, "썸머 라이언", "30000");
         ShoppingItem shoppingItem4 = new ShoppingItem(R.drawable.gongcha, "공차 브라운 슈가 쥬얼리 밀크티", "5000");
         ShoppingItem shoppingItem5 = new ShoppingItem(R.drawable.sulbing, "설빙 애플망고치즈설빙", "8000");
-        ShoppingItem shoppingItem6 = new ShoppingItem(R.drawable.jordy, "죠르디 인형", "999,999");
+        ShoppingItem shoppingItem6 = new ShoppingItem(R.drawable.jordy, "죠르디 인형", "999999");
+        ShoppingItem shoppingItem7 = new ShoppingItem(R.drawable.donate, "기부하기", "100");
+        ShoppingItem shoppingItem8 = new ShoppingItem(R.drawable.donate, "기부하기", "1000");
+        ShoppingItem shoppingItem9 = new ShoppingItem(R.drawable.donate, "기부하기", "10000");
+
         mArrayList.add(shoppingItem);
         mArrayList.add(shoppingItem1);
         mArrayList.add(shoppingItem2);
@@ -153,6 +157,10 @@ public class ShopFragment extends Fragment implements ShopAdapter.OnListItemLong
         mArrayList.add(shoppingItem4);
         mArrayList.add(shoppingItem5);
         mArrayList.add(shoppingItem6);
+        mArrayList.add(shoppingItem7);
+        mArrayList.add(shoppingItem8);
+        mArrayList.add(shoppingItem9);
+
         return mArrayList;
     }
 
