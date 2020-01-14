@@ -152,20 +152,20 @@ public class HomeTrashPhotoActivity extends AppCompatActivity  {
                                 ans.add(0, max);
                                 Log.d("result", max);
                                 if(max.equals("일반쓰레기")){
-                                    howToLitter.setText("일반 종량제 봉투에 담아서 배출, " +
-                                            "도자기 및 깨진유리, 태울 수 없는 것은 쓰레기용 봉투(PP봉투)에 담아서 배출");
+                                    howToLitter.setText("- 일반 종량제 봉투에 담아서 배출 \n" +
+                                            "- 도자기 및 깨진유리, 태울 수 없는 것은 쓰레기용 봉투(PP봉투)에 담아서 배출");
                                 }
                                 else if(max.equals("유리")){
-                                    howToLitter.setText("병뚜껑을 제거한 후 내용물을 비우고 배출, " +
-                                            "깨진 유리는 재활용이 안되므로 신문지에 싸서 종량제 봉투 제출");
+                                    howToLitter.setText("- 병뚜껑을 제거한 후 내용물을 비우고 배출 \n" +
+                                            "- 깨진 유리는 재활용이 안되므로 신문지에 싸서 종량제 봉투 제출");
                                 }
                                 else if(max.equals("캔")){
-                                    howToLitter.setText("내용물을 비우고 플라스틱 뚜껑이 있는 경우 분리 배출, " +
-                                            "부탄가스 용기, 살충제 용기 등은 통풍이 잘 되는 곳에서 구멍을 뚫어 가스를 비운 후 배출");
+                                    howToLitter.setText("- 내용물을 비우고 플라스틱 뚜껑이 있는 경우 분리 배출 \n" +
+                                            "- 부탄가스 용기, 살충제 용기 등은 통풍이 잘 되는 곳에서 구멍을 뚫어 가스를 비운 후 배출");
                                 }
                                 else if(max.equals("플라스틱")){
-                                    howToLitter.setText("다른 재질로 된 뚜껑은 제거 후 내용물을 비우고 배출, " +
-                                            "폐스티로폼은 테이프 등 이물질을 제거 후 배출");
+                                    howToLitter.setText("- 다른 재질로 된 뚜껑은 제거 후 내용물을 비우고 배출 \n" +
+                                            "- 폐스티로폼은 테이프 등 이물질을 제거 후 배출");
                                 }
                                 trashName.setText(ans.get(0));
 

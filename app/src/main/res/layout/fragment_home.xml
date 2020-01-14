@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:textSize="15sp"
-                android:text="에게 물어보기" />
+                android:text=" 에게 물어보기" />
 
 
         </LinearLayout>
@@ -49,7 +50,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_add_a_photo_black_24dp" />
 

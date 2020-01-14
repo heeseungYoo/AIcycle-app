@@ -78,9 +78,9 @@ public class LoginActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                                    Intent intent1 = new Intent(LoginActivity.this, LockScreenActivity.class);
+                                                    //Intent intent1 = new Intent(LoginActivity.this, LockScreenActivity.class);
                                                     intent.putExtra("userID", userID);
-                                                    intent1.putExtra("userID", userID);
+                                                    //intent1.putExtra("userID", userID);
                                                     LoginActivity.this.startActivity(intent);
                                                     finish();
                                                 }

@@ -24,7 +24,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
 
     private ArrayList<RecyclePoint> mList;
     private Context mContext;
-    private int recycle_icon[] = {R.drawable.recycle_plastic, R.drawable.recycle_metal, R.drawable.recycle_glass, R.drawable.ic_lock_open, R.drawable.ic_shopping_basket_black_24dp};
+    private int recycle_icon[] = {R.drawable.recycle_plastic, R.drawable.recycle_metal, R.drawable.recycle_glass, R.drawable.ic_lock_open, R.drawable.ic_shopping_basket_black_24dp, R.drawable.ic_insert_emoticon_black_24dp};
 
 
     public class RecycleViewHolder extends RecyclerView.ViewHolder {

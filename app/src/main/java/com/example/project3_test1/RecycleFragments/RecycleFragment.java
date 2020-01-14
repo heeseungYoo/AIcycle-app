@@ -115,6 +115,9 @@ public class RecycleFragment extends Fragment {
                             case "shop":
                                 icon = 4;
                                 break;
+                            case "hello world":
+                                icon = 5;
+                                break;
                         }
                         recyclePoint.setRecycleItem(type);
                         recyclePoint.setRecycleTime(date);

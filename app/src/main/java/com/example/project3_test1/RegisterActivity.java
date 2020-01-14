@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -96,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try{
-                            Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_LONG).show();
+                            //Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_LONG).show();
 
                             JSONArray jsonResponse = new JSONArray(response);
                             String success = jsonResponse.toString();
@@ -108,8 +109,10 @@ public class RegisterActivity extends AppCompatActivity {
                                 dialog.show();
                                 idText.setEnabled(false);//아이디값을 바꿀 수 없도록 함
                                 validate = true;//검증완료
-                                idText.setBackgroundColor(getResources().getColor(R.color.colorGray));
-                                validateButton.setBackgroundColor(getResources().getColor(R.color.colorGray));
+                                idText.setBackgroundResource(R.drawable.shape_stroke_green);
+                                //idText.setBackgroundColor(getResources().getColor(R.color.colorGray));
+                                validateButton.setBackgroundResource(R.drawable.shape_stroke_green);
+                                //setBackgroundColor(getResources().getColor(R.color.colorGray));
                             }else{//사용할 수 없는 아이디라면
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                 dialog = builder.setMessage("alreay used ID")
