@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment {
 
                     }
 
-                    Toast.makeText(getContext(), "Clicked" + finalI, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(), "Clicked" + finalI, Toast.LENGTH_SHORT).show();
                 }
             });
         }
