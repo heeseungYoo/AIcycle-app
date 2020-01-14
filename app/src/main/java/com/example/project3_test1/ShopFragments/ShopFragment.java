@@ -61,8 +61,16 @@ public class ShopFragment extends Fragment {
     public ArrayList<ShoppingItem> getShopList() {
         ShoppingItem shoppingItem = new ShoppingItem(R.drawable.crape, "스페로스페라 크레이프 케이크", "22,000");
         ShoppingItem shoppingItem1 = new ShoppingItem(R.drawable.nintendo, "닌텐도 스위치", "150,000");
+        ShoppingItem shoppingItem2 = new ShoppingItem(R.drawable.lion, "썸머 라이언", "30,000");
+        ShoppingItem shoppingItem3 = new ShoppingItem(R.drawable.gongcha, "공차 브라운 슈가 쥬얼리 밀크티", "5000");
+        ShoppingItem shoppingItem4 = new ShoppingItem(R.drawable.sulbing, "설빙 애플망고치즈설빙", "8000");
+        ShoppingItem shoppingItem5 = new ShoppingItem(R.drawable.jordy, "죠르디 인형", "999,999");
         mArrayList.add(shoppingItem);
         mArrayList.add(shoppingItem1);
+        mArrayList.add(shoppingItem2);
+        mArrayList.add(shoppingItem3);
+        mArrayList.add(shoppingItem4);
+        mArrayList.add(shoppingItem5);
         return mArrayList;
     }
 }
