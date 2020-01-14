@@ -67,9 +67,9 @@ public class ShopFragment extends Fragment implements ShopAdapter.OnListItemLong
         mAdapter = new ShopAdapter(v.getContext(), mArrayList, this, this);
         mRecyclerView.setAdapter(mAdapter);
 
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(),
-                mGridLayoutManager.getOrientation());
-        mRecyclerView.addItemDecoration(dividerItemDecoration);
+        //DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(),
+        //        mGridLayoutManager.getOrientation());
+        //mRecyclerView.addItemDecoration(dividerItemDecoration);
 
         getShopList();
         mAdapter.notifyDataSetChanged();
