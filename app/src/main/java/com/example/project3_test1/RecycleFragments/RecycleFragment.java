@@ -1,10 +1,13 @@
 package com.example.project3_test1.RecycleFragments;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,6 +36,7 @@ public class RecycleFragment extends Fragment {
     private View v;
     private TextView RecycleUserName;
     private TextView RecycleUserPoint;
+    private ImageView recycleImage;
     private String userID;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -43,15 +47,16 @@ public class RecycleFragment extends Fragment {
 
         RecycleUserName = v.findViewById(R.id.recycle_user_name);
         RecycleUserPoint = v.findViewById(R.id.recycle_user_point);
+        recycleImage = v.findViewById(R.id.person_recycle_item);
 
         final SwipeRefreshLayout swipeRefreshLayout = v.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 mArrayList.clear();
-                mAdapter.notifyDataSetChanged();
 
                 getRecyclePoint();
+                mAdapter.notifyDataSetChanged();
 
                 swipeRefreshLayout.setRefreshing(false);
             }
@@ -76,29 +81,47 @@ public class RecycleFragment extends Fragment {
     }
 
     private ArrayList<RecyclePoint> getRecyclePoint() {
-        final RecyclePoint recyclePoint = new RecyclePoint();
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                int totalPoint = 0;
                 try {
                     JSONArray jsonResponse = new JSONArray(response);
                     String userName = jsonResponse.getJSONObject(0).getString("name");
                     RecycleUserName.setText(userName);
+                    int totalPoint = jsonResponse.getJSONObject(0).getInt("totalPoints");
+                    RecycleUserPoint.setText(String.format(Locale.KOREA, "%d", totalPoint));
 
                     JSONArray jsonPoint = jsonResponse.getJSONObject(0).getJSONArray("points");
                     for(int i = 0; i < jsonPoint.length(); i++) {
+                        RecyclePoint recyclePoint = new RecyclePoint();
                         String type = jsonPoint.getJSONObject(i).getString("type");
                         String date = jsonPoint.getJSONObject(i).getString("date");
                         int point = jsonPoint.getJSONObject(i).getInt("point");
+                        int icon = 0;
+                        switch (type) {
+                            case "plastic":
+                                icon = 0;
+                                break;
+                            case "metal":
+                                icon = 1;
+                                break;
+                            case "glass":
+                                icon = 2;
+                                break;
+                            case "unlock":
+                                icon = 3;
+                                break;
+                            case "shop":
+                                icon = 4;
+                                break;
+                        }
                         recyclePoint.setRecycleItem(type);
                         recyclePoint.setRecycleTime(date);
                         recyclePoint.setRecyclePoint(point);
+                        recyclePoint.setRecycleIcon(icon);
                         mArrayList.add(recyclePoint);
-                        totalPoint += point;
                     }
-                    RecycleUserPoint.setText(String.format(Locale.KOREA, "%d", totalPoint));
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -108,8 +131,6 @@ public class RecycleFragment extends Fragment {
         PersonalInfoRequest personalInfoRequest = new PersonalInfoRequest(userID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         queue.add(personalInfoRequest);
-        //RecyclePoint recyclePoint = new RecyclePoint(R.drawable.ic_add_shopping_cart_black_24dp, "페트병", "2020-01-03", "30점");
-        //mArrayList.add(recyclePoint);
         return mArrayList;
     }
 }

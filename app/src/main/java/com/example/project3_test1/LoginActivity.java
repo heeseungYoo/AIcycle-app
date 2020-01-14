@@ -20,6 +20,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.example.project3_test1.PersonFragments.LockScreenActivity;
 import com.example.project3_test1.PersonFragments.PersonFragment;
 
 import org.json.JSONArray;
@@ -77,7 +78,9 @@ public class LoginActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                    Intent intent1 = new Intent(LoginActivity.this, LockScreenActivity.class);
                                                     intent.putExtra("userID", userID);
+                                                    intent1.putExtra("userID", userID);
                                                     LoginActivity.this.startActivity(intent);
                                                     finish();
                                                 }

@@ -6,11 +6,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.project3_test1.PersonFragments.LockScreenActivity;
 import com.example.project3_test1.PersonFragments.ScreenService;
 
 public class FirstAuthActivity extends AppCompatActivity {
 
     private Intent intent;
+    private Intent intent2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class FirstAuthActivity extends AppCompatActivity {
             intent = new Intent(FirstAuthActivity.this, MainActivity.class);
             intent.putExtra("userID", SaveSharedPreference.getUserID(this));
             intent.putExtra("isChecked", SaveSharedPreference.getSlide(this));
+            intent2 = new Intent(FirstAuthActivity.this, LockScreenActivity.class);
+            intent2.putExtra("userID", SaveSharedPreference.getUserID(this));
 
             if(SaveSharedPreference.getSlide(this)) {
                 Intent intent1 = new Intent(FirstAuthActivity.this, ScreenService.class);
