@@ -11,4 +11,10 @@
         <item>@drawable/recycle08</item>
         <item>@drawable/recycle09</item>
     </array>
+
+    <array name="recycleItem">
+        <item>@drawable/recycle_plastic</item>
+        <item>@drawable/recycle_metal</item>
+        <item>@drawable/recycle_glass</item>
+    </array>
 </resources>

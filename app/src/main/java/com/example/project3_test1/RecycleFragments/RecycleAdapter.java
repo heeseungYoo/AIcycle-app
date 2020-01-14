@@ -1,6 +1,8 @@
 package com.example.project3_test1.RecycleFragments;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,12 +24,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
 
     private ArrayList<RecyclePoint> mList;
     private Context mContext;
+    private int recycle_icon[] = {R.drawable.recycle_plastic, R.drawable.recycle_metal, R.drawable.recycle_glass, R.drawable.ic_lock_open, R.drawable.ic_shopping_basket_black_24dp};
+
 
     public class RecycleViewHolder extends RecyclerView.ViewHolder {
-        public ImageView recycleIcon;
-        public TextView recycleItem;
-        public TextView recycleTime;
-        public TextView recyclePoint;
+        protected ImageView recycleIcon;
+        protected TextView recycleItem;
+        protected TextView recycleTime;
+        protected TextView recyclePoint;
 
         public RecycleViewHolder(View view) {
             super(view);
@@ -50,11 +54,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
     public RecycleAdapter(Context context, ArrayList<RecyclePoint> list) {
         mList = list;
         mContext = context;
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecycleViewHolder recycleViewHolder, int position) {
-        final int pos = position;
 
         recycleViewHolder.recycleItem.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
         recycleViewHolder.recycleItem.setGravity(Gravity.CENTER);
@@ -69,7 +73,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
         recycleViewHolder.recyclePoint.setText(String.format(Locale.KOREA,"%d", mList.get(position).getRecyclePoint()));
 
         //recycleViewHolder.recycleIcon.setImageDrawable(mList.get(position).getRecycleIcon());
-        recycleViewHolder.recycleIcon.setImageResource(mList.get(position).getRecycleIcon());
+        recycleViewHolder.recycleIcon.setImageResource(recycle_icon[mList.get(position).getRecycleIcon()]);
     }
 
     @Override

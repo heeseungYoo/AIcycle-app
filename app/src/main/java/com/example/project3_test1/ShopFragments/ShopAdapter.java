@@ -21,6 +21,17 @@ import java.util.ArrayList;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
 
+    public interface OnListItemLongSelectedInterface {
+        void onItemLongSelected(View v, int position);
+    }
+
+    public interface OnListItemSelectedInterface {
+        void onItemSelected(View v, int position);
+    }
+
+    private OnListItemLongSelectedInterface mLongListener;
+    private OnListItemSelectedInterface mListener;
+
     private ArrayList<ShoppingItem> mList;
     private Context mContext;
     private AlertDialog dialog;
@@ -39,11 +50,29 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    mListener.onItemSelected(v, getAdapterPosition());
+                }
+            });
+
+            view.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    mLongListener.onItemLongSelected(v, getAdapterPosition());
+                    return false;
+                }
+            });
+/*
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                     dialog = builder.setMessage(shopPoint.getText() + "point가 소모됩니다 구매하시겠습니까?")
                             .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+                                    //ShopFragment shopFragment = new ShopFragment();
+                                    //int mypoint = shopFragment.getRecyclePoint();
                                     Toast.makeText(mContext, shopPoint.getText() + "point 소모되었습니다.", Toast.LENGTH_LONG).show();
                                     dialog.dismiss();
                                     //db point 소모
@@ -53,7 +82,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                             .create();
                     dialog.show();
                 }
-            });
+            });*/
         }
     }
 
@@ -66,9 +95,11 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         return shopViewHolder;
     }
 
-    public ShopAdapter(Context context, ArrayList<ShoppingItem> list) {
+    public ShopAdapter(Context context, ArrayList<ShoppingItem> list, OnListItemSelectedInterface listener, OnListItemLongSelectedInterface longListener) {
         mList = list;
         mContext = context;
+        mListener = listener;
+        mLongListener = longListener;
     }
 
     @Override
@@ -99,4 +130,5 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             dialog.cancel();
         }
     };
+
 }
