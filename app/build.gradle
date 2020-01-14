@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    aaptOptions{
+        noCompress "tflite"
+        noCompress "lite"
+    }
     sourceSets {
         main {
             res.srcDirs =
@@ -47,6 +51,9 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.kyleduo.switchbutton:library:2.0.0'
     implementation 'me.imid.swipebacklayout.lib:library:1.0.0'
+    implementation 'com.google.firebase:firebase-ml-model-interpreter:22.0.0'
+    implementation "org.tensorflow:tensorflow-lite:1.13.1"
 
     implementation 'com.ebanx:swipe-button:0.8.3'
 }
+apply plugin: 'com.google.gms.google-services'
