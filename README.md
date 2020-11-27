@@ -1,3 +1,3 @@
-# madcamp3
+# AIcycle
 AI Recycle Platform (Android App)
 
